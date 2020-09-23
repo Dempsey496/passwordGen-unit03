@@ -58,4 +58,4 @@ function generatePassword(upper, lower, number, symbol, length) {
 
 
     return finalPassword;
-}
+};

@@ -6,6 +6,19 @@
 
 * I knew I was going to do either _check-box_ or _switch_ options for the user to choose what to include. After looking online I found a simple check-box style to add to the HTML.
 
-# Elements
+# Elements & basic functions
 
-* 
+* My next step was to look at all the HTML ID's and create corresponding elements in JS.
+
+* The next functions I created were to create the corresponding checkbox elements.
+
+* I then created the -const- variables to perminately assign their values.
+
+![image of jsPassword code]()
+
+![image of jsPassword site]
+
+
+# License
+
+Licensed under the mit license.

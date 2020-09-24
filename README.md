@@ -12,11 +12,11 @@
 
 * The next functions I created were to create the corresponding checkbox elements.
 
-* I then created the -const- variables to perminately assign their values.
+* I then created the _const_ variables to perminately assign their values.
 
-![image of jsPassword code]()
+![image of jsPassword code](https://github.com/Dempsey496/passwordGen-unit03/blob/master/Screenshot%202020-09-23%20210156.png)
 
-![image of jsPassword site]
+![image of jsPassword site](https://github.com/Dempsey496/passwordGen-unit03/blob/master/Screenshot%202020-09-23%20210221.png)
 
 
 # License

@@ -1,67 +1,55 @@
-// ```
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-// ```
+var answerEl = document.getElementById("answer");
 var genBtnEl = document.getElementById("generate");
 var charSet = "";
 var passLength = "";
+var newPassword = "";
 
-var upperArray = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,";
-var lowerArray = "a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z,";
-var symbolArray = "!,@,#,$,%,^,&,*,-,?,";
-var numberArray = "0,1,2,3,4,5,6,7,8,9,";
+var upperArray = "ABCDEFGHIJKLMNOP";
+var lowerArray = "abcdefghijklmnopqrstuvwxyz";
+var symbolArray = "!@#$%^&*-?";
+var numberArray = "0123456789";
 // this part actually works:
-passWord();
+function genPassword() {
+    var password = passWord();
+    answerEl.innerHTML = password;
+}
 function passWord() {
     passLength = prompt("Choose the length of your new password", "20");
     console.log(passLength);
 
-    
+
     if ((passLength < 8) || (passLength > 128) || (isNaN(passLength))) {
         alert("Please choose a password between 8 and 128 characters");
         passWord();
     }
-}
-var includeLower=confirm("lowercase?")
-var includeUpper=confirm("uppercase?")
-var includeSymbol=confirm("symbols?")
-var includeNumber=confirm("numbers?")
-if(includeLower === true){
-    charSet += lowerArray;
-    console.log(charSet);
-}
-if(includeUpper === true){
-    charSet += upperArray;
-    console.log(charSet);
-}
-if(includeNumber === true){
-    charSet += numberArray;
-    console.log(charSet);
-}
-if(includeSymbol === true){
-    charSet += symbolArray;
-    console.log(charSet);
-}
-// passConfirm();
-// function passConfirm(){
-// var includeUpper = confrim("Would you like uppercase letters?");
-// }
 
-// for (i = 1; i <= criteria.passwordLength; i++) {
-//     var index = Math.floor(Math.random() * options.length);
-//     newPassword = newPassword + options.charAt(index)
-//   }
-//   return newPassword;
+    var includeLower = confirm("Would you like to include lowercase?")
+    var includeUpper = confirm("Would you like to include uppercase?")
+    var includeSymbol = confirm("Would you like to include symbols?")
+    var includeNumber = confirm("Would you like to include numbers?")
+    if (includeLower === true) {
+        charSet += lowerArray;
+        console.log(charSet);
+    }
+    if (includeUpper === true) {
+        charSet += upperArray;
+        console.log(charSet);
+    }
+    if (includeNumber === true) {
+        charSet += numberArray;
+        console.log(charSet);
+    }
+    if (includeSymbol === true) {
+        charSet += symbolArray;
+        console.log(charSet);
+    }
+    for (i = 0; i < passLength; i++){
+        var index = Math.floor(Math.random() * charSet.length);
+        newPassword += charSet.charAt(index)
+    }
+    
+    return newPassword;
+
+}
+genBtnEl.addEventListener("click", genPassword)
+

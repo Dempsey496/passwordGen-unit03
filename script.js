@@ -35,6 +35,26 @@ function passWord() {
         passWord();
     }
 }
+var includeLower=confirm("lowercase?")
+var includeUpper=confirm("uppercase?")
+var includeSymbol=confirm("symbols?")
+var includeNumber=confirm("numbers?")
+if(includeLower === true){
+    charSet += lowerArray;
+    console.log(charSet);
+}
+if(includeUpper === true){
+    charSet += upperArray;
+    console.log(charSet);
+}
+if(includeNumber === true){
+    charSet += numberArray;
+    console.log(charSet);
+}
+if(includeSymbol === true){
+    charSet += symbolArray;
+    console.log(charSet);
+}
 // passConfirm();
 // function passConfirm(){
 // var includeUpper = confrim("Would you like uppercase letters?");

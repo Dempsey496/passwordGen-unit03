@@ -10,8 +10,9 @@ var symbolArray = "!@#$%^&*-?";
 var numberArray = "0123456789";
 // this part actually works:
 function genPassword() {
-    var password = passWord();
+    password = passWord();
     answerEl.innerHTML = password;
+    newPassword = "";  
 }
 function passWord() {
     passLength = prompt("Choose the length of your new password", "20");
@@ -49,7 +50,9 @@ function passWord() {
     }
     
     return newPassword;
+    
 
 }
 genBtnEl.addEventListener("click", genPassword)
+
 

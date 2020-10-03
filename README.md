@@ -1,20 +1,15 @@
 # passwordGen-unit03
-// ```
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
-// WHEN prompted for character types to include in the password
-// THEN I choose lowercase, uppercase, numeric, and/or special characters
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
-// ```
+* My goal with this site was to give the user an easy, quick password. They will be able to specify the length and what type of characters was included in their password.
+
+# Walkthrough
+* Once user clicks the generate button they will be asked how long they want the password to be.
+* After length is choosen, user must confirm if they wish to include different characters in their password.
+* Generated password will be displayed in area provided.
+
+# Bugs
+* I was having a lot of trouble clearing the old password if the generate button was clicked a second time. I was finally able to fix it by making _newPassword = ""_.
+
+
+
 
 Need to clear past passwords when button is clicked again
